@@ -1,0 +1,22 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Dec 14 13:19:29 2018
+
+@author: User
+"""
+
+from pandas import read_csv
+from pandas import set_option
+a = 'd.csv'
+b = ['a','b','c']
+data = read_csv(a, names = b)
+set_option('display.width' ,344)
+set_option('precision', 5)
+print(data.shape)
+print(data.describe())
+print(data.corr(method = 'pearson'))
+print(data.groupby('a').size())
+print(data.dtypes)
+c = data.head(45)
+print(c)
+print(data.skew())
